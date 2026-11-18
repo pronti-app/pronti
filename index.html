@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRONTI | Prepare-se para tudo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#" data-view="inicio">
+      <span class="brand-mark">P</span>
+      <span>pronti<span class="brand-dot">.</span><small>prepare-se para tudo</small></span>
+    </a>
+
+    <p class="menu-label">MENU PRINCIPAL</p>
+    <nav>
+      <button class="nav-link active" data-view="inicio"><span>⌂</span> Início</button>
+      <button class="nav-link" data-view="escola"><span>▤</span> Modo escola</button>
+      <button class="nav-link" data-view="viagem"><span>♧</span> Modo viagem</button>
+      <button class="nav-link" data-view="passeio"><span>♡</span> Modo passeio</button>
+      <button class="nav-link" data-view="necessaire"><span>✿</span> Necessaire</button>
+    </nav>
+
+    <p class="menu-label secondary-label">MINHA ORGANIZAÇÃO</p>
+    <nav>
+      <button class="nav-link" data-view="itens"><span>▣</span> Meus itens</button>
+      <button class="nav-link" data-view="salvos"><span>▤</span> Preparações salvas</button>
+      <button class="nav-link" data-view="clima"><span>☼</span> Clima</button>
+    </nav>
+
+    <div class="sidebar-note">
+      <span class="note-flower">✿</span>
+      <p>Um pouquinho de organização faz toda a diferença.</p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SEU DIA, DO SEU JEITO</p>
+        <h1>Olá! Vamos nos preparar? <span>♡</span></h1>
+      </div>
+      <div class="profile-mark">P</div>
+    </header>
+
+    <!-- INÍCIO -->
+    <section class="view active" id="inicio">
+      <div class="welcome-banner">
+        <div>
+          <span class="banner-tag">BEM-VINDA AO PRONTI</span>
+          <h2>Menos preocupação.<br><span>Mais tranquilidade.</span></h2>
+          <p>Organize o que você precisa e aproveite cada momento sem esquecer nada.</p>
+          <button class="primary-button" data-go="escola">Começar a organizar <span>→</span></button>
+        </div>
+        <div class="banner-art">
+          <div class="art-circle">✿</div>
+          <div class="art-card">♡</div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ESCOLHA UMA OCASIÃO</p>
+          <h2>O que vamos preparar hoje?</h2>
+        </div>
+      </div>
+
+      <div class="occasion-grid">
+        <button class="occasion-card" data-go="escola">
+          <span class="icon-circle">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M14 17V13a10 10 0 0 1 20 0v4M10 18h28l3 24H7l3-24Z"/>
+              <path d="M18 18v-4a6 6 0 0 1 12 0v4M18 27h12M24 27v7"/>
+            </svg>
+          </span>
+          <span class="occasion-title">Escola</span>
+          <span class="occasion-description">Organize sua mochila</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="occasion-card" data-go="viagem">
+          <span class="icon-circle">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="8" y="15" width="32" height="27" rx="5"/>
+              <path d="M18 15V10a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v5M8 25h32M17 25v17M31 25v17"/>
+            </svg>
+          </span>
+          <span class="occasion-title">Viagem</span>
+          <span class="occasion-description">Prepare suas malas</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="occasion-card" data-go="passeio">
+          <span class="icon-circle">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M24 40S7 30 7 18a9 9 0 0 1 17-4 9 9 0 0 1 17 4c0 12-17 22-17 22Z"/>
+              <path d="M15 23h6l3-6 4 13 3-7h3"/>
+            </svg>
+          </span>
+          <span class="occasion-title">Passeio</span>
+          <span class="occasion-description">Não esqueça de nada</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="occasion-card" data-go="necessaire">
+          <span class="icon-circle">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M9 19h30l3 23H6l3-23Z"/>
+              <path d="M17 19v-5a7 7 0 0 1 14 0v5M15 27h18M24 27v7"/>
+              <path d="M20 10h8"/>
+            </svg>
+          </span>
+          <span class="occasion-title">Necessaire</span>
+          <span class="occasion-description">Cuide dos seus itens pessoais</span>
+          <span class="card-arrow">↗</span>
+        </button>
+      </div>
+
+      <div class="dashboard-bottom">
+        <div class="small-panel">
+          <p class="eyebrow">SEU INVENTÁRIO</p>
+          <h3><span id="items-count">0</span> itens cadastrados</h3>
+          <p>Adicione o que você já tem para montar listas mais úteis.</p>
+          <button class="text-button" data-go="itens">Organizar meus itens →</button>
+        </div>
+        <div class="small-panel">
+          <p class="eyebrow">SUAS PREPARAÇÕES</p>
+          <h3><span id="preparations-count">0</span> listas salvas</h3>
+          <p>Suas organizações ficam guardadas neste dispositivo.</p>
+          <button class="text-button" data-go="salvos">Ver minhas listas →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODOS DE PREPARAÇÃO -->
+    <section class="view" id="escola">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">PRONTI PARA A ROTINA</p>
+        <h2>Modo escola <span>♡</span></h2>
+        <p>Monte sua lista de acordo com suas aulas e com os materiais que você já tem.</p>
+      </div>
+      <div class="preparation-panel">
+        <form class="preparation-form" data-mode="escola">
+          <label>Nome da preparação
+            <input name="name" placeholder="Ex.: Minha mochila de segunda-feira" required>
+          </label>
+          <div class="form-row">
+            <label>Data
+              <input type="date" name="date">
+            </label>
+            <label>Ano escolar
+              <select name="year">
+                <option value="">Selecione</option>
+                <option>1º ano do Ensino Médio</option>
+                <option>2º ano do Ensino Médio</option>
+                <option>3º ano do Ensino Médio</option>
+                <option>Ensino Fundamental</option>
+                <option>Outro</option>
+              </select>
+            </label>
+          </div>
+          <label>Quais matérias você terá?
+            <input name="subjects" placeholder="Ex.: Matemática, Português e Biologia">
+          </label>
+          <label>Alguma observação?
+            <textarea name="extra" rows="2" placeholder="Ex.: Tenho prova de matemática..."></textarea>
+          </label>
+          <button class="primary-button" type="submit">Montar minha lista →</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="viagem">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">PRONTI PARA PARTIR</p>
+        <h2>Modo viagem <span>♡</span></h2>
+        <p>Organize sua mala considerando o destino, a duração e o que você tem disponível.</p>
+      </div>
+      <div class="preparation-panel">
+        <form class="preparation-form" data-mode="viagem">
+          <label>Nome da preparação
+            <input name="name" placeholder="Ex.: Viagem de férias" required>
+          </label>
+          <div class="form-row">
+            <label>Destino
+              <input name="destination" placeholder="Para onde você vai?">
+            </label>
+            <label>Duração
+              <input name="duration" placeholder="Ex.: 5 dias">
+            </label>
+          </div>
+          <div class="form-row">
+            <label>Data de ida
+              <input type="date" name="date">
+            </label>
+            <label>Clima esperado
+              <select name="weather">
+                <option value="variado">Não sei / variado</option>
+                <option value="quente">Quente</option>
+                <option value="frio">Frio</option>
+                <option value="chuvoso">Chuvoso</option>
+              </select>
+            </label>
+          </div>
+          <label>Observações
+            <textarea name="extra" rows="2" placeholder="Ex.: Vou à praia e também sair à noite..."></textarea>
+          </label>
+          <button class="primary-button" type="submit">Montar minha lista →</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="passeio">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">PRONTI PARA APROVEITAR</p>
+        <h2>Modo passeio <span>♡</span></h2>
+        <p>Prepare o que levar para aproveitar seu dia sem preocupações.</p>
+      </div>
+      <div class="preparation-panel">
+        <form class="preparation-form" data-mode="passeio">
+          <label>Nome da preparação
+            <input name="name" placeholder="Ex.: Passeio de sábado" required>
+          </label>
+          <div class="form-row">
+            <label>Destino
+              <input name="destination" placeholder="Para onde você vai?">
+            </label>
+            <label>Duração
+              <input name="duration" placeholder="Ex.: Algumas horas">
+            </label>
+          </div>
+          <div class="form-row">
+            <label>Tipo de passeio
+              <select name="outing">
+                <option value="geral">Passeio geral</option>
+                <option value="praia">Praia</option>
+                <option value="parque">Parque / ar livre</option>
+                <option value="shopping">Shopping</option>
+                <option value="evento">Evento</option>
+              </select>
+            </label>
+            <label>Clima esperado
+              <select name="weather">
+                <option value="variado">Não sei / variado</option>
+                <option value="quente">Quente</option>
+                <option value="frio">Frio</option>
+                <option value="chuvoso">Chuvoso</option>
+              </select>
+            </label>
+          </div>
+          <label>Observações
+            <textarea name="extra" rows="2" placeholder="Conte algum detalhe importante..."></textarea>
+          </label>
+          <button class="primary-button" type="submit">Montar minha lista →</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="necessaire">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">SEUS CUIDADOS PESSOAIS</p>
+        <h2>Minha necessaire <span>♡</span></h2>
+        <p>Escolha o tipo de necessaire e organize seus itens pessoais.</p>
+      </div>
+      <div class="preparation-panel">
+        <form class="preparation-form" data-mode="necessaire">
+          <label>Nome da preparação
+            <input name="name" placeholder="Ex.: Necessaire para viagem" required>
+          </label>
+          <label>Tipo de necessaire
+            <select name="kit">
+              <option value="diaria">Uso diário</option>
+              <option value="viagem">Viagem</option>
+              <option value="escola">Escola</option>
+              <option value="passeio">Passeio</option>
+            </select>
+          </label>
+          <label>Observações
+            <textarea name="extra" rows="2" placeholder="Ex.: Vou passar o dia fora..."></textarea>
+          </label>
+          <button class="primary-button" type="submit">Montar minha lista →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTADO -->
+    <section class="view" id="resultado">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">SUA ORGANIZAÇÃO</p>
+        <h2 id="result-title">Sua lista <span>♡</span></h2>
+        <p id="result-description">Confira os itens da sua preparação.</p>
+      </div>
+      <div class="result-summary">
+        <div><strong id="available-count">0</strong><span>Você já tem</span></div>
+        <div><strong id="missing-count">0</strong><span>Precisa providenciar</span></div>
+      </div>
+      <div class="checklist-panel">
+        <div class="flower-decoration">✿</div>
+        <div id="checklist-area"></div>
+        <label class="notes-label">Anotações
+          <textarea id="result-notes" rows="2" placeholder="Escreva lembretes para essa preparação..."></textarea>
+        </label>
+        <div class="result-actions">
+          <button class="secondary-button" id="save-preparation">Salvar preparação</button>
+          <button class="primary-button" id="new-preparation">Nova preparação</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEUS ITENS -->
+    <section class="view" id="itens">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">SEU INVENTÁRIO PESSOAL</p>
+        <h2>Meus itens <span>♡</span></h2>
+        <p>Cadastre o que você já tem. O PRONTI vai usar essas informações para montar suas listas.</p>
+      </div>
+      <div class="inventory-panel">
+        <form id="item-form">
+          <label>Nome do item
+            <input id="item-name" placeholder="Ex.: Casaco, caderno, protetor solar..." required>
+          </label>
+          <label>Categoria
+            <select id="item-category">
+              <option value="escola">Materiais escolares</option>
+              <option value="roupas">Roupas e acessórios</option>
+              <option value="viagem">Itens de viagem</option>
+              <option value="passeio">Passeio</option>
+              <option value="necessaire">Cuidados pessoais</option>
+              <option value="geral">Outros</option>
+            </select>
+          </label>
+          <button class="primary-button" type="submit">Adicionar item +</button>
+        </form>
+        <div class="inventory-info">Dica: quanto mais itens você cadastrar, mais úteis serão as suas listas!</div>
+        <div id="items-list" class="items-list"></div>
+      </div>
+    </section>
+
+    <!-- SALVOS -->
+    <section class="view" id="salvos">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">SEU HISTÓRICO</p>
+        <h2>Preparações salvas <span>♡</span></h2>
+        <p>Encontre suas listas e consulte suas organizações anteriores.</p>
+      </div>
+      <div id="all-preparations" class="saved-list"></div>
+    </section>
+
+    <!-- CLIMA -->
+    <section class="view" id="clima">
+      <button class="back-link" data-go="inicio">← Voltar ao início</button>
+      <div class="page-heading">
+        <p class="eyebrow">PREVISÃO DO TEMPO</p>
+        <h2>Confira o clima <span>☼</span></h2>
+        <p>Consulte a previsão para pensar melhor no que levar.</p>
+      </div>
+      <div class="weather-panel">
+        <form id="weather-form">
+          <label>Digite uma cidade
+            <input id="city-name" placeholder="Ex.: Rio de Janeiro" required>
+          </label>
+          <button class="primary-button" type="submit">Consultar clima</button>
+        </form>
+        <div id="weather-result"></div>
+      </div>
+    </section>
+
+    <footer>Feito com carinho para deixar sua rotina mais leve. <span>♡</span></footer>
+  </main>
+</div>
+
+</body>
+</html>
